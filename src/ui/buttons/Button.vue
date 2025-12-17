@@ -106,12 +106,11 @@ const { classList, component, type } = useButton(props)
 
   &--iconOnly {
     padding: 0;
-    width: 2rem;
-    height: 2rem;
-    display: flex;
+    width: 2.175rem;
+    height: 2.175rem;
     align-items: center;
     justify-content: center;
-    font-size: 1.25em;
+    line-height: 1;
   }
 }
 </style>
