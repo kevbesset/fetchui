@@ -1,9 +1,9 @@
-@use "./themes/light";
-@use "./themes/dark";
+@use './themes/light';
+@use './themes/dark';
 
 :root {
   // Fonts
-  --font: "Hanken Grotesk", sans-serif;
+  --font: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   // Spacing
   --containerInline: 1.5rem;
@@ -20,9 +20,13 @@
   --borderRadiusRounded: 99rem;
 
   // Transitions
-  --transitionDuration: 400ms;
-  --transitionTimingFunction: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  --transitionDuration: 150ms;
+  --transitionTimingFunction: linear;
   --transition: var(--transitionDuration) var(--transitionTimingFunction);
+
+  --bouncingDuration: 400ms;
+  --bouncingTimingFunction: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  --bouncingTransition: var(--bouncingDuration) var(--bouncingTimingFunction);
 
   // Safety spaces
   --safetyTop: 4rem;

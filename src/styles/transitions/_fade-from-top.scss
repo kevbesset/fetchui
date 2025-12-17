@@ -1,7 +1,7 @@
 .fade-from-top {
   &-enter-active,
   &-leave-active {
-    transition: all var(--transitionDuration);
+    transition: all var(--transition);
   }
 
   &-enter-from,

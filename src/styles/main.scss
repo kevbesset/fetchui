@@ -1,11 +1,11 @@
-@use "./reset";
-@use "./theme";
+@use './reset';
+@use './theme';
 
-@use "./transition";
+@use './transition';
 
-@use "./directives/bouncy";
+@use './directives/bouncy';
 
-@use "./placeholders/typography";
+@use './placeholders/typography';
 
 html,
 body {
@@ -21,4 +21,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-optical-sizing: auto;
   interpolate-size: allow-keywords;
+}
+
+::selection {
+  background: var(--textColor);
+  color: var(--backgroundColor);
 }

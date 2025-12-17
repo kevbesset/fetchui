@@ -1,7 +1,7 @@
 .fade {
   &-enter-active,
   &-leave-active {
-    transition: opacity var(--transitionDuration);
+    transition: opacity var(--transition);
   }
 
   &-enter-from,
