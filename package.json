@@ -19,7 +19,7 @@
   "homepage": "https://github.com/kevbesset/fetchui",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kevbesset/fetchui.git"
+    "url": "git+https://github.com/kevbesset/fetchui.git"
   },
   "bugs": {
     "url": "https://github.com/kevbesset/fetchui/issues"
@@ -28,7 +28,7 @@
   "license": "MIT",
   "type": "module",
   "bin": {
-    "fetchui": "./bin/index.ts"
+    "fetchui": "bin/index.ts"
   },
   "scripts": {
     "dev": "vite",
@@ -56,6 +56,7 @@
     "jiti": "^2.6.1",
     "npm-run-all2": "^8.0.4",
     "prettier": "3.6.2",
+    "sass-embedded": "^1.97.0",
     "typescript": "~5.9.0",
     "vite": "^7.2.4",
     "vite-plugin-vue-devtools": "^8.0.5",
