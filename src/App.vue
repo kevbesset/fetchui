@@ -4,7 +4,7 @@ import Button from '@/ui/buttons/Button.vue'
 
 <template>
   <div class="demo">
-    <h2>Buttons <Button icon-only>+</Button></h2>
+    <h2>Buttons <Button icon-only aria-label="Add">+</Button></h2>
     <div class="list">
       <Button>Button</Button>
       <Button variant="primary">Button</Button>
