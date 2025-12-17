@@ -16,9 +16,19 @@
     "vue",
     "svelte"
   ],
+  "homepage": "https://github.com/kevbesset/fetchui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevbesset/fetchui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kevbesset/fetchui/issues"
+  },
+  "author": "Kev Bisset <kevbesset@gmail.com>",
+  "license": "MIT",
   "type": "module",
-  "engines": {
-    "node": "^20.19.0 || >=22.12.0"
+  "bin": {
+    "fetchui": "./bin/index.ts"
   },
   "scripts": {
     "dev": "vite",
