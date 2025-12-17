@@ -1,0 +1,11 @@
+.slide-from-top {
+  &-enter-active,
+  &-leave-active {
+    transition: transform var(--transitionDuration);
+  }
+
+  &-enter-from,
+  &-leave-to {
+    transform: translateY(-100%);
+  }
+}

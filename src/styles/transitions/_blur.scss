@@ -1,0 +1,12 @@
+.blur {
+  &-enter-active,
+  &-leave-active {
+    transition: all var(--transitionDuration);
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    filter: blur(1em);
+  }
+}

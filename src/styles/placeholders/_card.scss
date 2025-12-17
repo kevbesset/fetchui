@@ -1,0 +1,12 @@
+@use "./shadow";
+@use "./spacing";
+@use "./rounded";
+
+%card {
+  @extend %boxShadow;
+  @extend %spacingContainer;
+  @extend %corner;
+
+  padding-block: var(--spacingBlock);
+  background: var(--backgroundElevated);
+}

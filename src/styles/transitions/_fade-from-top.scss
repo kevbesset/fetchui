@@ -1,0 +1,12 @@
+.fade-from-top {
+  &-enter-active,
+  &-leave-active {
+    transition: all var(--transitionDuration);
+  }
+
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}

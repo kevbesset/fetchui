@@ -1,0 +1,30 @@
+@use "./themes/light";
+@use "./themes/dark";
+
+:root {
+  // Fonts
+  --font: "Hanken Grotesk", sans-serif;
+
+  // Spacing
+  --containerInline: 1.5rem;
+
+  --spacingInline: 1rem;
+  --spacingBlock: 1rem;
+
+  // Gaps
+  --gap: 1.25rem;
+
+  // Radius
+  --borderRadius: 0.5rem;
+  --borderRadiusContainer: 2rem;
+  --borderRadiusRounded: 99rem;
+
+  // Transitions
+  --transitionDuration: 400ms;
+  --transitionTimingFunction: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  --transition: var(--transitionDuration) var(--transitionTimingFunction);
+
+  // Safety spaces
+  --safetyTop: 4rem;
+  --safetyBottom: 2rem;
+}

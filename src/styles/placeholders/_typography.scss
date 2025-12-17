@@ -1,0 +1,24 @@
+%title {
+  font-size: 1.875em;
+  font-weight: bold;
+  letter-spacing: -0.01em;
+}
+
+%body {
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-family: var(--font);
+}
+
+%muted {
+  color: var(--textMuted);
+}
+
+%ellipsed {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}

@@ -1,0 +1,11 @@
+.slide-from-right {
+  &-enter-active,
+  &-leave-active {
+    transition: all var(--transitionDuration);
+  }
+
+  &-enter-from,
+  &-leave-to {
+    transform: translateX(100%);
+  }
+}
