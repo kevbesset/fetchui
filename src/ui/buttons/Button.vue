@@ -3,7 +3,6 @@ import { useButton } from '@/ui/buttons/useButton'
 
 const props = defineProps<{
   variant?: 'default' | 'primary' | 'secondary' | 'discrete'
-  size?: 'small' | 'medium' | 'large'
   iconOnly?: boolean
   block?: boolean
   rounded?: boolean
@@ -59,7 +58,7 @@ const { classList, component, type } = useButton(props)
   letter-spacing: 0.01rem;
   text-align: center;
   transition: background-color var(--transition);
-  border: 1px solid color-mix(in oklch, var(--buttonTextColor), var(--buttonBackgroundColor) 95%);
+  border: 1px solid var(--borderColor);
 
   @media (hover: hover) {
     &:hover {
