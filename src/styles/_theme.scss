@@ -5,9 +5,11 @@
   // Fonts
   --font: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  // Spacing
+  // Container
   --containerInline: 1rem;
+  --containerMaxWidth: 40rem;
 
+  // Spacing
   --spacingInline: 1rem;
   --spacingBlock: 0.75rem;
 
@@ -27,8 +29,4 @@
   --bouncingDuration: 400ms;
   --bouncingTimingFunction: cubic-bezier(0.47, 1.64, 0.41, 0.8);
   --bouncingTransition: var(--bouncingDuration) var(--bouncingTimingFunction);
-
-  // Safety spaces
-  --safetyTop: 4rem;
-  --safetyBottom: 2rem;
 }
