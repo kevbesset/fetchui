@@ -18,6 +18,8 @@ withDefaults(
 
 <style scoped lang="scss">
 .icon {
+  display: inline;
+  max-width: none;
   vertical-align: middle;
 }
 </style>
