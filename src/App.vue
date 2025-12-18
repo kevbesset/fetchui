@@ -5,6 +5,17 @@ import Alert from '@/ui/Alert.vue'
 import Badge from '@/ui/Badge.vue'
 import Button from '@/ui/buttons/Button.vue'
 import Icon from '@/ui/Icon.vue'
+import type { ToastType } from '@/ui/toasts/toast.store'
+import ToastManager from '@/ui/toasts/ToastManager.vue'
+import { useToast } from '@/ui/toasts/useToast'
+
+const toast = useToast()
+
+function addToast(type: ToastType) {
+  toast[type]('This is a test toast', {
+    description: 'This is a test toast description',
+  })
+}
 </script>
 
 <template>
@@ -70,6 +81,14 @@ import Icon from '@/ui/Icon.vue'
       <Button variant="primary">Button</Button>
       <Button variant="secondary">Button</Button>
       <Button variant="discrete">Button</Button>
+    </div>
+    <h2>Toasts</h2>
+    <ToastManager />
+    <div class="list">
+      <Button @click="addToast('default')">Send Toast</Button>
+      <Button @click="addToast('success')">Send Success Toast</Button>
+      <Button @click="addToast('error')">Send Error Toast</Button>
+      <Button @click="addToast('warning')">Send Warning Toast</Button>
     </div>
   </div>
 </template>
