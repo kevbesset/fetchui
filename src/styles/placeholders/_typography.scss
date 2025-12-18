@@ -17,6 +17,10 @@
   color: var(--textMuted);
 }
 
+%small {
+  font-size: 0.75em;
+}
+
 %ellipsed {
   overflow: hidden;
   text-overflow: ellipsis;
