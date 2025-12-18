@@ -6,9 +6,9 @@
   --textColor: black;
   --textMuted: #333;
 
-  --borderColor: #e0e0e0;
+  --borderColor: color-mix(in oklch, var(--textColor), var(--backgroundElevated) 95%);
 
-  --success: #2b6456;
-  --warning: #a14c09;
-  --error: #c1331b;
+  --success: green;
+  --warning: orange;
+  --error: red;
 }
