@@ -1,12 +1,17 @@
-@use "./shadow";
-@use "./spacing";
-@use "./rounded";
+@use './shadow';
+@use './spacing';
+@use './rounded';
 
-%card {
-  @extend %boxShadow;
+%cardWithoutShadow {
   @extend %spacingContainer;
   @extend %corner;
 
   padding-block: var(--spacingBlock);
   background: var(--backgroundElevated);
+  border: 1px solid var(--borderColor);
+}
+
+%card {
+  @extend %cardWithoutShadow;
+  @extend %boxShadow;
 }
