@@ -22,6 +22,10 @@ function addToast(type: ToastType) {
   <div class="demo">
     <h2>Accordions</h2>
     <div class="list">
+      <Accordion name="alone">
+        <template #trigger> Independent Accordion </template>
+        <template #content> Independent Accordion content </template>
+      </Accordion>
       <AccordionGroup>
         <Accordion name="test1">
           <template #trigger> Accordion 1 </template>
