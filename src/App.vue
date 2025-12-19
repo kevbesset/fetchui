@@ -104,6 +104,7 @@ function addToast(type: ToastType) {
   max-width: 40rem;
   margin-block: var(--spacingBlock);
   margin-inline: auto;
+  padding-inline: var(--containerInline);
 }
 
 .list {
