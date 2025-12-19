@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Icon from '@/ui/Icon.vue'
-import { computed, inject, ref } from 'vue'
+import { inject, ref, watch } from 'vue'
 
 const props = defineProps<{
   name: string
@@ -14,11 +14,19 @@ const [activeAccordionName, setActiveAccordionName] = inject('accordionGroup', [
   },
 ])
 
-const expanded = computed(() => activeAccordionName.value === props.name)
+const expanded = defineModel<boolean>()
 
-function toggleExpansion() {
-  setActiveAccordionName(expanded.value ? undefined : props.name)
-}
+watch(expanded, (value) => {
+  if (value) {
+    setActiveAccordionName(props.name)
+  }
+})
+
+watch(activeAccordionName, (value) => {
+  if (value !== undefined && value !== props.name) {
+    expanded.value = false
+  }
+})
 </script>
 
 <template>
@@ -29,7 +37,7 @@ function toggleExpansion() {
       :aria-expanded="expanded ? 'true' : 'false'"
       :aria-controls="`accordion_content_${name}`"
       class="accordion__trigger"
-      @click="toggleExpansion"
+      @click="expanded = !expanded"
     >
       <slot name="trigger" />
       <Icon name="down-line" class="accordion__icon" />
