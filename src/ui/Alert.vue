@@ -76,20 +76,20 @@ const defaultIcon = computed(() => {
   }
 
   &--error {
-    border-color: color-mix(in oklch, var(--error), var(--backgroundColor) 80%);
-    background-color: color-mix(in oklch, var(--error), var(--backgroundColor) 95%);
+    border-color: color-mix(in oklch, var(--error), var(--backgroundElevated) 80%);
+    background-color: color-mix(in oklch, var(--error), var(--backgroundElevated) 95%);
     --colorIcon: var(--error);
   }
 
   &--success {
-    border-color: color-mix(in oklch, var(--success), var(--backgroundColor) 80%);
-    background-color: color-mix(in oklch, var(--success), var(--backgroundColor) 95%);
+    border-color: color-mix(in oklch, var(--success), var(--backgroundElevated) 80%);
+    background-color: color-mix(in oklch, var(--success), var(--backgroundElevated) 95%);
     --colorIcon: var(--success);
   }
 
   &--warning {
-    border-color: color-mix(in oklch, var(--warning), var(--backgroundColor) 80%);
-    background-color: color-mix(in oklch, var(--warning), var(--backgroundColor) 95%);
+    border-color: color-mix(in oklch, var(--warning), var(--backgroundElevated) 80%);
+    background-color: color-mix(in oklch, var(--warning), var(--backgroundElevated) 95%);
     --colorIcon: var(--warning);
   }
 
