@@ -4,10 +4,13 @@ import AccordionGroup from '@/ui/accordions/AccordionGroup.vue'
 import Alert from '@/ui/Alert.vue'
 import Badge from '@/ui/Badge.vue'
 import Button from '@/ui/buttons/Button.vue'
+import Dialog from '@/ui/dialogs/Dialog.vue'
 import Icon from '@/ui/Icon.vue'
+import Tabs from '@/ui/Tabs.vue'
 import type { ToastType } from '@/ui/toasts/toast.store'
 import ToastManager from '@/ui/toasts/ToastManager.vue'
 import { useToast } from '@/ui/toasts/useToast'
+import { ref } from 'vue'
 
 const toast = useToast()
 
@@ -16,6 +19,8 @@ function addToast(type: ToastType) {
     description: 'This is a test toast description',
   })
 }
+
+const dialogOpen = ref(false)
 </script>
 
 <template>
@@ -85,6 +90,44 @@ function addToast(type: ToastType) {
       <Button variant="primary">Button</Button>
       <Button variant="secondary">Button</Button>
       <Button variant="discrete">Button</Button>
+    </div>
+    <h2>Dialogs</h2>
+    <div class="list">
+      <Button @click="dialogOpen = true">Open Dialog</Button>
+      <Dialog v-model="dialogOpen">
+        <template #title>Are you absolutely sure?</template>
+        <template #default>
+          <p>
+            This action cannot be undone. This will permanently delete your account and remove your
+            data from our servers.
+          </p>
+        </template>
+        <template #footer>
+          <Button @click="dialogOpen = false">Cancel</Button>
+          <Button variant="primary" @click="dialogOpen = false">Continue</Button>
+        </template>
+      </Dialog>
+    </div>
+    <h2>Tabs</h2>
+    <div class="list">
+      <Tabs>
+        <div tab="Tab 1">
+          Tab 1 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident odit doloribus
+          asperiores rerum modi consectetur commodi quidem, perspiciatis perferendis iste adipisci
+          magni praesentium suscipit nobis iure voluptatum? Adipisci, ex atque?
+        </div>
+        <div tab="Tab 2">
+          Tab 2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident odit doloribus
+          asperiores rerum modi consectetur commodi quidem, perspiciatis perferendis iste adipisci
+          magni praesentium suscipit nobis iure voluptatum? Adipisci, ex atque? Lorem ipsum, dolor
+          sit amet consectetur adipisicing elit. Provident odit doloribus asperiores rerum modi
+          consectetur commodi quidem, perspiciatis perferendis iste adipisci magni praesentium
+          suscipit nobis iure voluptatum? Adipisci, ex atque? Lorem ipsum, dolor sit amet
+          consectetur adipisicing elit. Provident odit doloribus asperiores rerum modi consectetur
+          commodi quidem, perspiciatis perferendis iste adipisci magni praesentium suscipit nobis
+          iure voluptatum? Adipisci, ex atque?
+        </div>
+      </Tabs>
     </div>
     <h2>Toasts</h2>
     <ToastManager />
