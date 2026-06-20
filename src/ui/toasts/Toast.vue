@@ -2,7 +2,7 @@
 import { useTemplateRef } from 'vue'
 import { useSwipe } from '@vueuse/core'
 import type { Toast } from '@/ui/toasts/toast.store'
-import Alert from '@/ui/Alert.vue'
+import Alert from '@/ui/alerts/Alert.vue'
 
 defineProps<{
   toast: Toast

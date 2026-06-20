@@ -1,39 +1,15 @@
 <script setup lang="ts">
 import Button from '@/ui/buttons/Button.vue'
 import Icon from '@/ui/icons/Icon.vue'
-import { computed } from 'vue'
+import { useAlert, type AlertProps } from '@/ui/alerts/useAlert'
 
-const props = defineProps<{
-  variant?: 'default' | 'success' | 'warning' | 'error'
-  icon?: string
-  iconCollection?: string
-  closable?: boolean
-}>()
+const props = defineProps<AlertProps>()
 
-const defaultIcon = computed(() => {
-  switch (props.variant) {
-    case 'success':
-      return 'check-circle-line'
-    case 'warning':
-      return 'alert-line'
-    case 'error':
-      return 'forbid-circle-line'
-    default:
-      return 'information-line'
-  }
-})
+const { classList, defaultIcon } = useAlert(props)
 </script>
 
 <template>
-  <div
-    :class="[
-      'alert',
-      `alert--${variant}`,
-      {
-        'alert--closable': closable,
-      },
-    ]"
-  >
+  <div :class="classList">
     <Icon :name="icon || defaultIcon" :collection="iconCollection" class="alert__icon" />
     <div class="alert__title">
       <slot name="title" />
@@ -76,21 +52,21 @@ const defaultIcon = computed(() => {
   }
 
   &--error {
-    border-color: color-mix(in oklch, var(--error), var(--backgroundElevated) 80%);
-    background-color: color-mix(in oklch, var(--error), var(--backgroundElevated) 95%);
-    --colorIcon: var(--error);
+    border-color: color-mix(in oklch, var(--errorColor), var(--backgroundElevated) 80%);
+    background-color: color-mix(in oklch, var(--errorColor), var(--backgroundElevated) 95%);
+    --colorIcon: var(--errorColor);
   }
 
   &--success {
-    border-color: color-mix(in oklch, var(--success), var(--backgroundElevated) 80%);
-    background-color: color-mix(in oklch, var(--success), var(--backgroundElevated) 95%);
-    --colorIcon: var(--success);
+    border-color: color-mix(in oklch, var(--successColor), var(--backgroundElevated) 80%);
+    background-color: color-mix(in oklch, var(--successColor), var(--backgroundElevated) 95%);
+    --colorIcon: var(--successColor);
   }
 
   &--warning {
-    border-color: color-mix(in oklch, var(--warning), var(--backgroundElevated) 80%);
-    background-color: color-mix(in oklch, var(--warning), var(--backgroundElevated) 95%);
-    --colorIcon: var(--warning);
+    border-color: color-mix(in oklch, var(--warningColor), var(--backgroundElevated) 80%);
+    background-color: color-mix(in oklch, var(--warningColor), var(--backgroundElevated) 95%);
+    --colorIcon: var(--warningColor);
   }
 
   &__icon {

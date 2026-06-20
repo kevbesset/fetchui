@@ -1,31 +1,9 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, useSlots } from 'vue'
-
-const tabs = computed(() => slots.default?.().map(({ props }) => props?.tab))
+import { useTabs } from '@/ui/tabs/useTabs'
 
 const currentTab = defineModel<string>()
-const transitionName = ref('transition-next')
 
-const slots = useSlots()
-
-const bodyComponent = computed(() =>
-  slots.default?.().find(({ props }) => props?.tab === currentTab.value),
-)
-const currentTabIndex = computed(
-  () => tabs.value?.findIndex((tab) => tab === currentTab.value) || 0,
-)
-
-function handleTabChange(nextTab: string) {
-  const tabIndex = tabs.value?.findIndex((tab) => tab === nextTab) || 0
-  transitionName.value = tabIndex < currentTabIndex.value ? 'transition-prev' : 'transition-next'
-  currentTab.value = nextTab
-}
-
-onMounted(() => {
-  if (tabs.value && (!currentTab.value || !tabs.value.includes(currentTab.value))) {
-    currentTab.value = tabs.value[0]
-  }
-})
+const { tabs, bodyComponent, handleTabChange } = useTabs(currentTab)
 </script>
 
 <template>
@@ -90,7 +68,7 @@ onMounted(() => {
 
     &--active {
       pointer-events: none;
-      color: var(--colorText);
+      color: var(--textColor);
       anchor-name: --active-tab;
     }
   }

@@ -1,12 +1,7 @@
 <script setup lang="ts">
-import { useButton } from '@/ui/buttons/useButton'
+import { useButton, type ButtonProps } from '@/ui/buttons/useButton'
 
-const props = defineProps<{
-  variant?: 'default' | 'primary' | 'secondary' | 'discrete'
-  iconOnly?: boolean
-  block?: boolean
-  rounded?: boolean
-}>()
+const props = defineProps<ButtonProps>()
 
 const { classList, component, type } = useButton(props)
 </script>

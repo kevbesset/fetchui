@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Icon as IconifyIcon } from '@iconify/vue'
-import { useIcon, type IconPropsType } from './useIcon'
+import { useIcon, type IconProps } from './useIcon'
 
-const props = defineProps<IconPropsType>()
+const props = defineProps<IconProps>()
 const icon = useIcon(props)
 </script>
 

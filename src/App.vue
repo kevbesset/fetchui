@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LayoutRouter from './ui/LayoutRouter.vue';
+import LayoutRouter from './components/LayoutRouter.vue';
 
 </script>
 

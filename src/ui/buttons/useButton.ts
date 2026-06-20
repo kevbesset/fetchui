@@ -1,6 +1,15 @@
 import { computed, useAttrs, watchEffect } from 'vue'
 
-export function useButton(props: Record<string, unknown>) {
+export type ButtonVariant = 'default' | 'primary' | 'secondary' | 'discrete'
+
+export interface ButtonProps {
+  variant?: ButtonVariant
+  iconOnly?: boolean
+  block?: boolean
+  rounded?: boolean
+}
+
+export function useButton(props: ButtonProps) {
   const attrs = useAttrs()
 
   const disabled = computed(() => typeof attrs.disabled !== 'undefined' && !!attrs.disabled)
@@ -22,21 +31,16 @@ export function useButton(props: Record<string, unknown>) {
   )
 
   const classList = computed(() => {
-    const classes = []
-    classes.push('button')
+    const classes: (string | Record<string, boolean>)[] = ['button']
 
     if (props.variant) {
       classes.push(`button--${props.variant}`)
     }
 
-    if (props.size) {
-      classes.push(`button--${props.size}`)
-    }
-
     classes.push({
-      'button--block': props.block,
-      'button--rounded': props.rounded,
-      'button--iconOnly': props.iconOnly,
+      'button--block': !!props.block,
+      'button--rounded': !!props.rounded,
+      'button--iconOnly': !!props.iconOnly,
       'button--disabled': disabled.value,
     })
 

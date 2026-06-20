@@ -3,13 +3,13 @@ import { computed, toValue } from 'vue'
 const DEFAULT_COLLECTION = 'mingcute'
 const FILLABLE_COLLECTION: string[] = ['mingcute', 'mage']
 
-export interface IconPropsType {
+export interface IconProps {
   collection?: string
   name: string
   fill?: boolean
 }
 
-export function useIcon(props: IconPropsType) {
+export function useIcon(props: IconProps) {
   const collection = computed(() => props.collection || DEFAULT_COLLECTION)
   const isFillableCollection = computed(() => FILLABLE_COLLECTION.includes(collection.value))
   const hasFillableAttribute = computed(

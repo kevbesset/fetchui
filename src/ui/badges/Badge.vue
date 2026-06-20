@@ -44,7 +44,7 @@ defineProps<{
   }
 
   &--important {
-    --badgeBackgroundColor: var(--error);
+    --badgeBackgroundColor: var(--errorColor);
     --badgeTextColor: var(--textError);
   }
 }
