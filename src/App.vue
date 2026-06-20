@@ -6,3 +6,7 @@ import LayoutRouter from './components/LayoutRouter.vue';
 <template>
   <LayoutRouter />
 </template>
+
+<style lang="scss">
+@use "@/styles/main";
+</style>
