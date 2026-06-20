@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Icon from '@/ui/Icon.vue'
+import Icon from '@/ui/icons/Icon.vue'
 import { inject, ref, watch } from 'vue'
 
 const props = defineProps<{

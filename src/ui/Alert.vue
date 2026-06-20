@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Button from '@/ui/buttons/Button.vue'
-import Icon from '@/ui/Icon.vue'
+import Icon from '@/ui/icons/Icon.vue'
 import { computed } from 'vue'
 
 const props = defineProps<{

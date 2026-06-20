@@ -1,14 +1,12 @@
 @use './shadow';
-@use './spacing';
-@use './rounded';
 
 %cardWithoutShadow {
-  @extend %spacingContainer;
-  @extend %corner;
 
   padding-block: var(--spacingBlock);
+  padding-inline: var(--containerInline);
   background: var(--backgroundElevated);
   border: 1px solid var(--borderColor);
+  border-radius: var(--borderRadius);
 }
 
 %card {

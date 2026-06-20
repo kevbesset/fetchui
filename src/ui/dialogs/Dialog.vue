@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { nextTick, onMounted, onUnmounted, ref, useSlots, watch } from 'vue'
-import Icon from '@/ui/Icon.vue'
+import Icon from '@/ui/icons/Icon.vue'
 import Button from '@/ui/buttons/Button.vue'
 
 const props = defineProps<{
